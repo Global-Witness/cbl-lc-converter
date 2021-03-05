@@ -12,7 +12,8 @@ LEFT_MARGINS <- as.numeric(c(
   Sys.getenv("MARGIN_2"),
   Sys.getenv("MARGIN_3"),
   Sys.getenv("MARGIN_4"),
-  Sys.getenv("MARGIN_5")))
+  Sys.getenv("MARGIN_5"),
+  Sys.getenv("MARGIN_6")))
 
 COLUMN_NAMES <- c(
   Sys.getenv("COLUMN_NAME_1"),
@@ -31,12 +32,12 @@ extract_table <- function(page) {
         TRUE ~ 0),
       row_id = cumsum(new_row_flag) + 1,
       cell_id = case_when(
-        x <= LEFT_MARGINS[1] ~ COLUMN_NAMES[1],
-        between(x, LEFT_MARGINS[1], LEFT_MARGINS[2] - 1) ~ COLUMN_NAMES[2],
-        between(x, LEFT_MARGINS[2], LEFT_MARGINS[3] - 1) ~ COLUMN_NAMES[3],
-        between(x, LEFT_MARGINS[3], LEFT_MARGINS[4] - 1) ~ COLUMN_NAMES[4],
-        between(x, LEFT_MARGINS[4], LEFT_MARGINS[5] - 1) ~ COLUMN_NAMES[5],
-        x >= LEFT_MARGINS[5] ~ COLUMN_NAMES[6])) %>%
+        between(x, LEFT_MARGINS[1], LEFT_MARGINS[2] - 1) ~ COLUMN_NAMES[1],
+        between(x, LEFT_MARGINS[2], LEFT_MARGINS[3] - 1) ~ COLUMN_NAMES[2],
+        between(x, LEFT_MARGINS[3], LEFT_MARGINS[4] - 1) ~ COLUMN_NAMES[3],
+        between(x, LEFT_MARGINS[4], LEFT_MARGINS[5] - 1) ~ COLUMN_NAMES[4],
+        between(x, LEFT_MARGINS[5], LEFT_MARGINS[6] - 1) ~ COLUMN_NAMES[5],
+        x >= LEFT_MARGINS[6] ~ COLUMN_NAMES[6])) %>%
     select(row_id, cell_id, text) %>%
     rowwise() %>%
     mutate(text = case_when(
