@@ -4,6 +4,10 @@ This R script is designed to extract data tables from PDF disclosures of Letter 
 
 Run the script from within this directory using the command `Rscript converter.R`, or by opening it in an IDE like RStudio. Before running it, update the file `.Renviron` to set the relevant environment variables, as described below.
 
+## Requirements
+
+The script requires a recent version of R and the packages `dplyr`, `readr`, `purrr`, `tidyr`, `stringr` and `pdftools`. All of these except `pdftools` can be installed at the same time using the umbrella package `tidyverse`.
+
 ## Environment variables
 
 | Variable name | Description |
