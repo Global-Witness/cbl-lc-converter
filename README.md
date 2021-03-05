@@ -8,7 +8,7 @@ Run the script from within this directory using the command `Rscript converter.R
 
 | Variable name | Description |
 | ------------- | ----------- |
-| `PDF_PATH` | The location of the PDF file to extract data from. |
+| `PDF_PATH` | The location of the PDF file to extract data from (either a URL or local path). |
 | `CSV_PATH` | The desired location of the output file in CSV format. |
 | `MARGIN_[1–6]` | The x coordinate of the left-hand margin of each column (see [this Stack Overflow answer](https://stackoverflow.com/a/2592991) for some sugestions about how to calculate x, y coordinates from PDFs). |
 | `COLUMN_NAME_[1–6]` | The desired name of each columns in the output file. |
