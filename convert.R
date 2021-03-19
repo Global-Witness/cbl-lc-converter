@@ -40,6 +40,7 @@ extract_table <- function(page) {
       TRUE ~ str_c(text, collapse = " ")),
       .groups = "drop") %>%
     pivot_wider(id_cols = row, names_from = cell, values_from = text) %>%
+    mutate_at(COLUMN_NAMES[5], parse_number) %>%
     select(row, all_of(COLUMN_NAMES))
 }
 
