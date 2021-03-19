@@ -59,5 +59,15 @@ data %>%
     source_url = Sys.getenv("SOURCE_URL"),
     release_date = parse_date(Sys.getenv("RELEASE_DATE"))) %>%
   ungroup() %>%
-  select(source_url, release_date, page, row, everything()) %>%
+  select(
+    source_url,
+    release_date,
+    page,
+    row,
+    bank,
+    representative,
+    item,
+    currency,
+    amount,
+    company) %>%
   write_csv(Sys.getenv("CSV_PATH"))
