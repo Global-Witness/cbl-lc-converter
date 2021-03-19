@@ -14,9 +14,10 @@ The script requires a recent version of R and the packages `dplyr`, `readr`, `pu
 | ------------- | ----------- |
 | `PDF_PATH` | The location of the PDF file to extract data from (either a URL or local path). |
 | `CSV_PATH` | The desired location of the output file in CSV format. |
-| `MARGIN_[1–6]` | The x coordinate of the left-hand margin of each column (see [this Stack Overflow answer](https://stackoverflow.com/a/2592991) for some sugestions about how to calculate x, y coordinates from PDFs). |
-| `COLUMN_NAME_[1–6]` | The desired name of each columns in the output file. |
+| `TOP_MARGIN` | The y coordinate of the top of the table (after the column headers) on the first page of the release (see [this Stack Overflow answer](https://stackoverflow.com/a/2592991) for some sugestions about how to calculate x, y coordinates from PDFs). |
+| `LEFT_MARGINS` | The x coordinates of the left-hand margin of each column as a comma-separated list. |
+| `COLUMN_NAMES` | The desired name of each column in the output file, as a comma-separated list |
 
 ## Limitations
 
-The LC disclosures sometimes mix Arabic and Roman characters within cells. Due to the way R handles right-to-left scripts, any cell containing both a Roman character (A-Z) or a numeral (0-9) and some Arabic text may have the Arabic reversed in the output data. It's hoped that this will affect a relatively small number of cells in the data. Output data also needs tidying up by hand to remove header and footer rows from each page.
+The LC disclosures sometimes mix Arabic and Roman characters within cells. Due to the way R handles right-to-left scripts, any cell containing both a Roman character (A-Z) or a numeral (0-9) and some Arabic text may have the Arabic reversed in the output data. It's hoped that this will affect a relatively small number of cells in the data.
