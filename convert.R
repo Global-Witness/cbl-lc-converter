@@ -40,10 +40,11 @@ extract_table <- function(page) {
       TRUE ~ str_c(text, collapse = " ")),
       .groups = "drop") %>%
     pivot_wider(id_cols = row, names_from = cell, values_from = text) %>%
-    mutate_at(COLUMN_NAMES[5], parse_number) %>%
-    select(row, all_of(COLUMN_NAMES))
+    mutate_at(COLUMN_NAMES[5], parse_number)
 }
 
 data %>%
   map_dfr(extract_table, .id = "page") %>%
+  mutate(release_date = parse_date(Sys.getenv("RELEASE_DATE"))) %>%
+  select(release_date, page, row, all_of(COLUMN_NAMES)) %>%
   write_csv(Sys.getenv("CSV_PATH"))

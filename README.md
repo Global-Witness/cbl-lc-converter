@@ -12,6 +12,7 @@ The script requires a recent version of R and the packages `dplyr`, `readr`, `pu
 
 | Variable name | Description |
 | ------------- | ----------- |
+| `RELEASE_DATE` | The date of the release. |
 | `PDF_PATH` | The location of the PDF file to extract data from (either a URL or local path). |
 | `CSV_PATH` | The desired location of the output file in CSV format. |
 | `TOP_MARGIN` | The y coordinate of the top of the table (after the column headers) on the first page of the release (see [this Stack Overflow answer](https://stackoverflow.com/a/2592991) for some sugestions about how to calculate x, y coordinates from PDFs). |

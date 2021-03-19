@@ -1,3 +1,4 @@
+RELEASE_DATE=2021-03-18
 PDF_PATH=https://cbl.gov.ly/wp-content/uploads/2021/03/11-17March2021.pdf
 CSV_PATH=output/lcs.csv
 TOP_MARGIN=162
