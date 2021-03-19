@@ -1,5 +1,5 @@
 PDF_PATH=https://cbl.gov.ly/wp-content/uploads/2021/03/11-17March2021.pdf
-CSV_PATH=lcs.csv
+CSV_PATH=output/lcs.csv
 TOP_MARGIN=162
 LEFT_MARGINS=13,170,310,381,423,492
 COLUMN_NAMES=bank,representative,item,currency,amount,company
