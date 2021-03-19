@@ -13,12 +13,13 @@ The script requires a recent version of R and the packages `dplyr`, `readr`, `pu
 | Variable name | Description |
 | ------------- | ----------- |
 | `RELEASE_DATE` | The date of the release. |
-| `PDF_PATH` | The location of the PDF file to extract data from (either a URL or local path). |
+| `SOURCE_URL` | The source URL of the PDF to process (can be a local path if necessary). |
 | `CSV_PATH` | The desired location of the output file in CSV format. |
 | `TOP_MARGIN` | The y coordinate of the top of the table (after the column headers) on the first page of the release (see [this Stack Overflow answer](https://stackoverflow.com/a/2592991) for some sugestions about how to calculate x, y coordinates from PDFs). |
 | `LEFT_MARGINS` | The x coordinates of the left-hand margin of each column as a comma-separated list. |
-| `COLUMN_NAMES` | The desired name of each column in the output file, as a comma-separated list |
 
 ## Limitations
 
 The LC disclosures sometimes mix Arabic and Roman characters within cells. Due to the way R handles right-to-left scripts, any cell containing both a Roman character (A-Z) or a numeral (0-9) and some Arabic text may have the Arabic reversed in the output data. It's hoped that this will affect a relatively small number of cells in the data.
+
+Cells with text spanning multiple lines may also be misinterpreted as multiple rows. The script attempts to detect these cases and fix them, but it hasn't been tested extensively.
