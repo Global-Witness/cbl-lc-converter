@@ -1,5 +1,5 @@
-RELEASE_DATE=2021-04-22
-SOURCE_URL=https://cbl.gov.ly/wp-content/uploads/2021/04/15-21April2021.pdf
-CSV_PATH=output/cbl-lc-2021-04-22.csv
+RELEASE_DATE=2021-05-30
+SOURCE_URL=https://cbl.gov.ly/wp-content/uploads/2021/05/20-26May2021.pdf
+CSV_PATH=output/cbl-lc-2021-05-30.csv
 TOP_MARGIN=163
-LEFT_MARGINS=0,170,309,382,423,492
+LEFT_MARGINS=0,166,305,400,442,512
